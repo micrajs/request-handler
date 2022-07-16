@@ -2,6 +2,7 @@ export * from './data/utilities/accepts';
 export * from './data/utilities/acceptsAnyContentType';
 export * from './data/utilities/acceptsHtml';
 export * from './data/utilities/acceptsJson';
+export * from './data/utilities/cacheControl';
 export * from './data/utilities/cors';
 export * from './data/utilities/error';
 export * from './data/utilities/getAcceptableCharSets';
