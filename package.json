@@ -11,6 +11,19 @@
   "bugs": {
     "url": "https://github.com/micrajs/community/issues?q=is:issue+is:open+label:%22Project:+request-handler%22+label:%22Type:+fix%22"
   },
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    },
+    "./*": "./*",
+    "./utilities": {
+      "import": "./utilities.mjs",
+      "require": "./utilities.js",
+      "types": "./utilities.d.ts"
+    }
+  },
   "scripts": {
     "build:code": "vite build --config .viterc.ts",
     "build:types": "tsc -p tsconfig.json && tsc-alias --silent -p tsconfig.json --dir .",
