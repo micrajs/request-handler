@@ -3,8 +3,8 @@ lockfileVersion: 5.4
 specifiers:
   '@commitlint/cli': ^16.2.1
   '@micra/commit-lint-config': next
-  '@micra/core': 0.1.0-next.17
-  '@micra/error': 0.1.0-next.8
+  '@micra/core': next
+  '@micra/error': next
   '@micra/eslint-config': next
   '@micra/typescript-config': next
   '@micra/vite-config': next
@@ -23,12 +23,12 @@ specifiers:
   vitest: ^0.6.1
 
 dependencies:
+  '@micra/core': 0.1.0-next.17
   '@micra/error': 0.1.0-next.8
 
 devDependencies:
   '@commitlint/cli': 16.2.1
   '@micra/commit-lint-config': 0.1.0-next.1_@commitlint+cli@16.2.1
-  '@micra/core': 0.1.0-next.17
   '@micra/eslint-config': 0.1.0-next.1_qo6aclrcuraztg6h4usgnbrzbe
   '@micra/typescript-config': 0.1.0-next.1
   '@micra/vite-config': 0.1.0-next.4_iggmyam2welnlf75gonjlwkwxq
@@ -292,7 +292,7 @@ packages:
 
   /@micra/core/0.1.0-next.17:
     resolution: {integrity: sha512-D7PUQMUS/Ta40F6oSG7+RZG6qo8PdKemAdync++t181zh5LwS+krRfdjoOUL0tUURWxxhdccPPrpDGwUPsdyDw==}
-    dev: true
+    dev: false
 
   /@micra/error/0.1.0-next.8:
     resolution: {integrity: sha512-iHeX+IhFlNuWcczXfeAJEYoVWG6cTARETB7+WNiDJIlWojLNnXUwmSK/Low7XaMzyNeEZdXE7AJtdMHZ9Ry8rQ==}
