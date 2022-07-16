@@ -1,34 +1,36 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type {TypedResponse} from '@/types';
 import {HTTPError, isMicraError, WrappedError} from '@micra/error';
 
+export interface ErrorResponseOptions extends ResponseInit {
+  message?: string | Error;
+}
+
 export function error(
-  messageOrError: string | Error,
-  statusOrInit: number | ResponseInit = {},
+  status: number,
+  {
+    message = new HTTPError(status as any),
+    ...responseInit
+  }: ErrorResponseOptions = {},
 ): TypedResponse<Micra.ErrorMessage> {
-  const responseInit =
-    typeof statusOrInit === 'number' ? {status: statusOrInit} : statusOrInit;
   const headers = new Headers(responseInit.headers);
 
   if (!headers.has('Content-Type')) {
     headers.set('Content-Type', 'application/json; charset=utf-8');
   }
 
-  const err = isMicraError(messageOrError)
-    ? messageOrError
-    : messageOrError instanceof Error
-    ? new WrappedError(messageOrError, {
-        status: responseInit.status,
+  const err = isMicraError(message)
+    ? message
+    : message instanceof Error
+    ? new WrappedError(message, {
+        status,
         title: responseInit.statusText,
       })
-    : new HTTPError(
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (responseInit.status as any) ?? 500,
-        String(messageOrError),
-      );
+    : new HTTPError(status as any, String(message));
 
   return new Response(JSON.stringify(err.serialize()), {
-    status: err.statusCode,
     ...responseInit,
+    status,
     headers,
   });
 }
