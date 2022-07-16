@@ -1,6 +1,6 @@
 {
   "name": "@micra/request-handler",
-  "version": "next",
+  "version": "0.1.0-next.0",
   "description": "Micra's extensible request handler class and utilities",
   "repository": {
     "type": "git",
