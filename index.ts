@@ -15,6 +15,7 @@ export * from './data/utilities/getContentTypeHeader';
 export * from './data/utilities/getRequestBody';
 export * from './data/utilities/html';
 export * from './data/utilities/image';
+export * from './data/utilities/isHtml';
 export * from './data/utilities/isJson';
 export * from './data/utilities/isPrefetch';
 export * from './data/utilities/isRedirectResponse';

@@ -10,11 +10,13 @@ interface AcceptableHeaders {
   mediaTypes: string[];
 }
 
-export function getAcceptableHeaders(request: Request): AcceptableHeaders {
+export function getAcceptableHeaders(
+  requestOrResponse: Request | Response,
+): AcceptableHeaders {
   return {
-    charsets: getAcceptableCharSets(request),
-    encodings: getAcceptableEncodings(request),
-    languages: getAcceptableLanguages(request),
-    mediaTypes: getAcceptableMediaHeaders(request),
+    charsets: getAcceptableCharSets(requestOrResponse),
+    encodings: getAcceptableEncodings(requestOrResponse),
+    languages: getAcceptableLanguages(requestOrResponse),
+    mediaTypes: getAcceptableMediaHeaders(requestOrResponse),
   };
 }

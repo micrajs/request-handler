@@ -1,5 +1,5 @@
 import {accepts} from './accepts';
 
-export function acceptsJson(request: Request): boolean {
-  return accepts(request, 'application/json');
+export function acceptsJson(requestOrResponse: Request | Response): boolean {
+  return accepts(requestOrResponse, 'application/json');
 }

@@ -1,5 +1,5 @@
 import {accepts} from './accepts';
 
-export function acceptsHtml(request: Request): boolean {
-  return accepts(request, 'text/html');
+export function acceptsHtml(requestOrResponse: Request | Response): boolean {
+  return accepts(requestOrResponse, 'text/html');
 }

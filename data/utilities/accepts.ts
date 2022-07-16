@@ -1,7 +1,10 @@
 import {getAcceptableMediaHeaders} from './getAcceptableMediaHeaders';
 
-export function accepts(request: Request, ...contentTypes: string[]): boolean {
-  const accept = getAcceptableMediaHeaders(request);
+export function accepts(
+  requestOrResponse: Request | Response,
+  ...contentTypes: string[]
+): boolean {
+  const accept = getAcceptableMediaHeaders(requestOrResponse);
 
   if (accept.length === 0) {
     return true;

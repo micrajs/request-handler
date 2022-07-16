@@ -4,9 +4,9 @@ import {
 } from './parseContentDispositionHeader';
 
 export function getContentDispositionHeader(
-  request: Request,
+  requestOrResponse: Request | Response,
 ): ContentDisposition {
   return parseContentDispositionHeader(
-    request.headers.get('content-disposition') ?? '',
+    requestOrResponse.headers.get('content-disposition') ?? '',
   );
 }

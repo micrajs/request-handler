@@ -1,5 +1,9 @@
 import {parseAcceptableMediaHeaders} from './parseAcceptableMediaHeaders';
 
-export function getAcceptableMediaHeaders(request: Request): string[] {
-  return parseAcceptableMediaHeaders(request.headers.get('accept') ?? '');
+export function getAcceptableMediaHeaders(
+  requestOrResponse: Request | Response,
+): string[] {
+  return parseAcceptableMediaHeaders(
+    requestOrResponse.headers.get('accept') ?? '',
+  );
 }
