@@ -59,7 +59,7 @@
     "vitest": "^0.6.1"
   },
   "dependencies": {
-    "@micra/core": "next",
+    "@micra/core": "0.1.0-next.19",
     "@micra/error": "next"
   }
 }

@@ -1,6 +1,2 @@
 /// <reference types="@micra/core/router" />
-
-declare global {
-}
-
-export {};
+/// <reference types="@micra/core/request-handler" />
